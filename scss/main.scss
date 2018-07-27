@@ -1,5 +1,11 @@
 $primary-color: #444;
 $secondary-color: #eece1a;
+$show-home-image: true;
+$home-image: url();
+
+@mixin easeOut {
+  transition: all 0.5s ease-out;
+}
 
 * {
   box-sizing: border-box;
@@ -43,4 +49,32 @@ header {
 
 .text-secondary {
   color: $secondary-color;
+  @include easeOut();
+}
+
+// Home 
+main {
+  padding: 4rem;
+  height: 100%;
+
+  .icons {
+    margin-top: 1rem;
+
+    a {
+      padding: 0.4rem;
+
+      &:hover {
+        color: $secondary-color;
+        
+      }
+    }
+  }
+
+  &#home {
+    overflow: hidden;
+    
+    h1 {
+      margin-top: 20vh;
+    }
+  }
 }
